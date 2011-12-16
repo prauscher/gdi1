@@ -16,7 +16,11 @@ public class CoinSortTester {
 
 	@Before
 	public void setUp() {
-	    sorter = new CoinSorter(euroCoinValues);
+	    try {
+			sorter = new CoinSorter(euroCoinValues);
+		} catch (Exception e) {
+			// This never happens ;o)
+		}
 	}
 	
 	@Test

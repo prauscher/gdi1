@@ -21,7 +21,7 @@ public class Coin {
 	}
 	
 	/**
-	 * getValue: Liefert den Wert der Münze (test :3)
+	 * getValue: Liefert den Wert der Münze
 	 * 
 	 * @return Wert der Münze
 	 */

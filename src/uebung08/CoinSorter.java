@@ -22,27 +22,25 @@ public class CoinSorter {
 		return false;
 	}
 	
-	protected boolean insertCoin(Coin coin) {
+	protected int insertCoin(Coin coin) {
 		if (isValidValue(coin.getValue())) {
-			return true;
+			return coin.getValue();
 		}
-		return false;
+		return 0;
 	}
 	
 	public int insertCoins(Coin[] coins) {
 		if (coins == null) {
 			return 0;
 		}
-		int countedCoins = 0;
+		int countedSum = 0;
 		for (int i=0; i<coins.length; i++) {
-			if (insertCoin(coins[i])) {
-				countedCoins++;
-			}
+			countedSum += insertCoin(coins[i]);
 		}
-		if (countedCoins > 0) {
+		if (countedSum > 0) {
 			transactionCount++;
 		}
-		return countedCoins;
+		return countedSum;
 	}
 	
 	public int getNumberOfCoinsWithValue(int value) throws Exception {
